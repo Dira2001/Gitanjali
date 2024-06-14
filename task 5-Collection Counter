@@ -1,0 +1,30 @@
+from collections import Counter
+
+def main():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    X = int(data[0])
+    shoe_sizes = list(map(int, data[1:X+1]))
+    N = int(data[X+1])
+    customers = data[X+2:]
+    
+    # Create a Counter object to keep track of shoe sizes
+    inventory = Counter(shoe_sizes)
+    
+    total_earnings = 0
+    
+    for i in range(N):
+        size = int(customers[2*i])
+        price = int(customers[2*i+1])
+        
+        # If the shoe size is available, sell it
+        if inventory[size] > 0:
+            total_earnings += price
+            inventory[size] -= 1
+            
+    print(total_earnings)
+
+if __name__ == "__main__":
+    main()
