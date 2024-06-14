@@ -1,16 +1,10 @@
 def capitalize_name(full_name):
-    # Split the full name into individual words
     words = full_name.split()
-    
-    # Capitalize the first letter of each word and leave the rest as it is
     capitalized_words = [word.capitalize() if word else '' for word in words]
-    
-    # Join the capitalized words back into a single string
     capitalized_name = ' '.join(capitalized_words)
-    
-    # Print the result
+   
     print(capitalized_name)
 
-# Example usage
+# Example
 full_name = input().strip()
 capitalize_name(full_name)
