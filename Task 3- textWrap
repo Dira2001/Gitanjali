@@ -1,0 +1,18 @@
+def wrap(string, max_width):
+    wrapped_lines = []
+  for i in range(0, len(string), max_width):
+       wrapped_lines.append(string[i:i + max_width])
+     result = '\n'.join(wrapped_lines)
+    
+    return result
+
+# Example 
+if __name__ == "__main__":
+    import sys
+    input = sys.stdin.read
+    # Read the string
+    string = input().strip()
+    # Read the width
+    max_width = int(input().strip())
+    # Print the result of wrap function
+    print(wrap(string, max_width))
